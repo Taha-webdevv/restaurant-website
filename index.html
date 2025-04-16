@@ -1217,6 +1217,34 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <body>
+    <div id="gallery"></div>
+  
+    <script>
+      const spaceID = '8srtl3xbx8hv';
+      const accessToken = 'YOUR_DELIVERY_ACCESS_TOKEN';
+  
+      fetch(`https://cdn.contentful.com/spaces/${spaceID}/environments/master/entries?content_type=imageChange&access_token=${accessToken}`)
+        .then(res => res.json())
+        .then(data => {
+          const assets = data.includes.Asset;
+          const container = document.getElementById('gallery');
+  
+          assets.forEach(asset => {
+            const url = 'https:' + asset.fields.file.url;
+            const img = document.createElement('img');
+            img.src = url;
+            img.style.width = '300px';
+            container.appendChild(img);
+          });
+        });
+    </script>
+  </body>
+  
+
+
+
+
 </body>
 
 </html>
