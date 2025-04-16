@@ -170,6 +170,3 @@ window.addEventListener("mousemove", function (event) {
 
   
 });
-<body>
-  <script src="script.js"></script>
-</body>

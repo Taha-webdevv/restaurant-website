@@ -540,7 +540,7 @@
   .preload.loaded > * { opacity: 0; }
   
   .preload.loaded {
-    transition-delay: 250ms;
+    transition-delay: 50ms;
     transform: translateY(100%);
   }
   
